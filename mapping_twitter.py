@@ -39,6 +39,8 @@ def locations_layer(users, name, limit):
     counter = 0
     
     for user in info:
+        photo = user['img']
+
         if counter > limit:
             break
         counter += 1
@@ -62,8 +64,7 @@ def locations_layer(users, name, limit):
         fg_locs.add_child(folium.Marker(location=point,
                                         popup=data,
                                         tooltip=user['name'],
-                                        icon=folium.Icon(icon='airbnb',
-                                                        prefix='fa')))
+                                        icon=folium.CustomIcon(icon_image=photo)))
 
     return fg_locs
 
