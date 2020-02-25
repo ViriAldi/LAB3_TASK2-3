@@ -72,7 +72,7 @@ def locations_layer(users, name, limit):
 def map_creator(layers, location):
     map_loc = folium.Map(location=location,
                         zoom_start=10,
-                        tiles='OpenStreetMap')
+                        tiles='Stamen Terrain')
 
     for layer in layers:
         map_loc.add_child(layer)
